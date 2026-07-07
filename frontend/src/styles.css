@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, "Segoe UI", sans-serif;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transition: background 1s ease;
+}
+
+.bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #2a1535 0%, #0f0820 60%, #000 100%);
+  z-index: 0;
+  transition: all 1s ease;
+}
+
+.emotion-love .bg-gradient {
+  background: radial-gradient(ellipse at center, #4a1a3a 0%, #1a0820 60%, #000 100%);
+}
+.emotion-happy .bg-gradient {
+  background: radial-gradient(ellipse at center, #3a2a50 0%, #150a25 60%, #000 100%);
+}
+.emotion-sad .bg-gradient {
+  background: radial-gradient(ellipse at center, #1a2540 0%, #080f1f 60%, #000 100%);
+}
+.emotion-angry .bg-gradient {
+  background: radial-gradient(ellipse at center, #4a1515 0%, #200808 60%, #000 100%);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ---------------- Start Screen ---------------- */
+.start-screen {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 80px;
+  font-weight: 300;
+  color: #ffd1e8;
+  letter-spacing: 8px;
+  text-shadow: 0 0 40px rgba(255, 150, 200, 0.6);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.subtitle {
+  color: #ffa8c9;
+  font-size: 18px;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.start-btn {
+  margin-top: 30px;
+  padding: 18px 50px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #ff6ba8, #c44569);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 10px 40px rgba(255, 100, 150, 0.5);
+  transition: transform 0.2s;
+  letter-spacing: 2px;
+}
+
+.start-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ---------------- Avatar ---------------- */
+.avatar-container {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+/* ---------------- Webcam ---------------- */
+.webcam-wrap {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 160px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 180, 220, 0.5);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+  z-index: 10;
+  background: #000;
+}
+
+.webcam-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.webcam-label {
+  position: absolute;
+  bottom: 5px;
+  left: 8px;
+  color: white;
+  font-size: 12px;
+  background: rgba(0,0,0,0.5);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ---------------- Status ---------------- */
+.status-bar {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0,0,0,0.4);
+  padding: 8px 20px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #888;
+}
+
+.dot-listening { background: #4cd964; animation: pulse 1.2s infinite; }
+.dot-thinking { background: #ffd60a; animation: pulse 0.6s infinite; }
+.dot-speaking { background: #ff6ba8; animation: pulse 0.4s infinite; }
+.dot-idle { background: #888; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+/* ---------------- Caption ---------------- */
+.caption {
+  position: absolute;
+  bottom: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 70%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 16px;
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 0.3s ease;
+  border: 1px solid rgba(255,180,220,0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ---------------- Call Info ---------------- */
+.call-info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 10;
+}
+
+.call-name {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.call-timer {
+  color: #4cd964;
+  font-size: 12px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
