@@ -13,6 +13,7 @@ The project focuses on delivering a human-like experience through intelligent re
 - 🤖 AI-powered emotional intelligence companion
 - 💬 Real-time AI conversations with short-term memory
 - 🎤 Real-time voice conversations (speech-to-text + text-to-speech)
+- 💬 Multilingual conversations (Hindi, English, Hinglish) powered by LLM
 - 🎭 Interactive 3D AI avatar with lip-sync
 - 📷 Live webcam integration with head tracking
 - 🧠 Emotion-aware responses
@@ -136,7 +137,7 @@ npm run dev
 - User authentication and per-user profiles
 - Long-term conversation memory (summarized, beyond last 20 messages)
 - Personalized AI companion (customizable personality/name)
-- Multi-language voice support (language switcher in UI)
+- Dynamic language detection for voice input/output (currently fixed to Hindi STT/TTS)
 - Emotion analytics dashboard
 - Backend security hardening (JWT auth, rate limiting, input validation, CORS whitelist)
 
