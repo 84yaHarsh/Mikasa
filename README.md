@@ -10,16 +10,14 @@ The project focuses on delivering a human-like experience through intelligent re
 
 ## ✨ Features
 
-* 🤖 AI-powered emotional intelligence companion
-* 💬 Real-time AI conversations
-* 🎤 Real-time voice conversations
-* 🎭 Interactive 3D AI avatar
-* 📷 Live webcam integration
-* 🧠 Emotion-aware responses
-* ❤️ Human-like interaction experience
-* ⚡ Fast and responsive interface
-* 🔒 Secure backend architecture
-* 📱 Responsive design
+- 🤖 AI-powered emotional intelligence companion
+- 💬 Real-time AI conversations with short-term memory
+- 🎤 Real-time voice conversations (speech-to-text + text-to-speech)
+- 🎭 Interactive 3D AI avatar with lip-sync
+- 📷 Live webcam integration with head tracking
+- 🧠 Emotion-aware responses
+- ⚡ Fast and responsive interface
+- 📱 Responsive design
 ---
 
 ## 🛠️ Tech Stack
@@ -135,13 +133,12 @@ npm run dev
 
 ## 🚀 Future Improvements
 
-* Voice conversations
-* Long-term conversation memory
-* User authentication
-* Conversation history
-* Personalized AI companion
-* Multi-language support
-* Emotion analytics dashboard
+- User authentication and per-user profiles
+- Long-term conversation memory (summarized, beyond last 20 messages)
+- Personalized AI companion (customizable personality/name)
+- Multi-language voice support (language switcher in UI)
+- Emotion analytics dashboard
+- Backend security hardening (JWT auth, rate limiting, input validation, CORS whitelist)
 
 ---
 
